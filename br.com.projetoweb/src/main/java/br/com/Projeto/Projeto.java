@@ -22,12 +22,25 @@ public class Projeto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			
 			throws ServletException, IOException {
+
+	 
+		
+//
+	float a = Float.parseFloat(request.getParameter("a"));
+		float b = Float.parseFloat(request.getParameter("b"));
+		
+		float total;
+		
+		total=a+b;
+		
+		
 	
-	 PrintWriter write = response.getWriter();
-	 write.println("<html><body>");
-	 write.println("<p>O seu enderenço ip é "+request.getRemoteAddr()+"</p>");
-	 write.println("</body></html>");
-	 write.flush();
+		
+		 
+		 
+			
+		request.setAttribute("total",total);
+		request.getRequestDispatcher("exemplo.jsp").forward(request, response);
 		
 	}
 
